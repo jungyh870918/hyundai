@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REPORT IV · 대한민국 국부 선점 전략</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
+<style>
+/* ═══════════════════════════════════════
+   REPORT IV — FINANCIAL TIMES × ECONOMIST
+   premium editorial research paper
+═══════════════════════════════════════ */
+:root{
+  --paper:    #f4f6f9;   /* bright cool off-white */
+  --paper-lt: #ffffff;   /* card lift */
+  --navy:     #11243f;   /* deep navy — headings, rules */
+  --navy2:    #2f5d86;   /* slate blue */
+  --crimson:  #cc0f1f;   /* vibrant crimson accent */
+  --ink:      #14171c;
+  --ink2:     #393f49;
+  --muted:    #6f7682;
+  --faint:    #b7bdc7;
+  --line:     rgba(17,36,63,.12);
+  --line2:    rgba(17,36,63,.26);
+  --track:    #e3e7ec;   /* light bar remainder */
+  --serif: 'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo',sans-serif;
+  --sans:  'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.6;
+}
+::selection{background:var(--crimson);color:#fff;}
+.ft-wrap{max-width:1120px;margin:0 auto;padding:0 40px;}
+
+/* ── TOP UTILITY NAV ── */
+.ft-topbar{
+  position:sticky;top:0;z-index:900;
+  background:rgba(244,246,249,.94);
+  backdrop-filter:blur(10px) saturate(140%);
+  border-bottom:1px solid var(--navy);
+}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:52px;flex-wrap:wrap;}
+.ft-brand{
+  font-family:var(--serif);font-weight:900;font-size:18px;letter-spacing:.5px;
+  color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px;
+}
+.ft-brand::before{content:'';width:9px;height:9px;background:var(--crimson);border-radius:50%;}
+.ft-nav{display:flex;gap:2px;flex-wrap:wrap;}
+.ft-nav a{
+  font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;padding:6px 13px;border-radius:2px;transition:all .16s;
+}
+.ft-nav a:hover{color:var(--navy);background:rgba(17,36,63,.07);}
+.ft-nav a.on{background:var(--navy);color:#fff;}
+
+/* ── MASTHEAD ── */
+.masthead{padding:46px 0 0;}
+.mast-rule{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--navy);padding-bottom:10px;border-bottom:1px solid var(--navy);flex-wrap:wrap;
+}
+.mast-rule .dot{color:var(--crimson);}
+.kicker{
+  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--crimson);margin:26px 0 14px;
+}
+.mast-h1{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(38px,6.2vw,72px);line-height:1.04;letter-spacing:-.5px;
+  color:var(--navy);
+}
+.standfirst{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(17px,2.4vw,23px);line-height:1.4;color:var(--ink2);
+  max-width:760px;margin-top:18px;
+}
+.meta-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  margin-top:34px;border-top:1px solid var(--line);
+  border-bottom:3px solid var(--navy);
+}
+.meta-item{padding:16px 22px 16px 0;border-right:1px solid var(--line);}
+.meta-item:last-child{border-right:none;}
+.meta-item strong{
+  display:block;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:7px;
+}
+.meta-item .mv{font-size:15px;font-weight:600;color:var(--navy);}
+
+/* ── SECTION SHELL ── */
+.sec{padding:58px 0;border-bottom:1px solid var(--line);}
+.sec:last-of-type{border-bottom:none;}
+.sec-tab{width:46px;height:5px;background:var(--crimson);margin-bottom:16px;}
+.sec-h{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(24px,3.4vw,34px);line-height:1.12;letter-spacing:-.3px;
+  color:var(--navy);padding-bottom:12px;border-bottom:2px solid var(--navy);
+}
+.sec-intro{
+  font-size:15px;line-height:1.75;color:var(--ink2);max-width:780px;margin-top:20px;
+}
+
+/* ── NAVY THESIS BLOCK (FT "alert" style) ── */
+.thesis{
+  background:var(--navy);color:#fff;padding:34px 38px;margin-top:28px;
+  border-left:6px solid var(--crimson);position:relative;
+}
+.thesis-ey{
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:#e7b9bd;margin-bottom:14px;
+}
+.thesis-title{
+  font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.8vw,28px);
+  line-height:1.3;margin-bottom:14px;color:#fff;
+}
+.thesis p{font-size:14.5px;line-height:1.8;color:rgba(255,255,255,.86);}
+
+/* ── 3-COLUMN PILLARS (newspaper columns) ── */
+.pillars{
+  display:grid;grid-template-columns:repeat(3,1fr);margin-top:36px;
+  border-top:1px solid var(--line);
+}
+.pillar{padding:26px 26px 26px 0;border-right:1px solid var(--line);}
+.pillar:last-child{border-right:none;padding-right:0;}
+.pillar .pico{font-size:24px;margin-bottom:14px;}
+.pillar h4{
+  font-family:var(--serif);font-weight:700;font-size:18px;color:var(--navy);margin-bottom:10px;
+}
+.pillar p{font-size:13px;line-height:1.72;color:var(--muted);}
+
+/* ── STOCK CARDS (editorial column blocks) ── */
+.stock-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:32px;}
+.stockcard{
+  background:var(--paper-lt);border:1px solid var(--line);
+  padding:26px 28px 28px;position:relative;
+}
+.stockcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--crimson);}
+.stockcard.span2{grid-column:span 2;}
+.sc-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
+.sc-name{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--navy);}
+.sc-code{font-family:'Inter',monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);margin-left:8px;font-weight:500;}
+.sc-tag{
+  font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--navy);color:#fff;padding:4px 11px;white-space:nowrap;
+}
+.sc-tag.crimson{background:var(--crimson);}
+.sc-lead{font-size:14px;line-height:1.74;color:var(--ink2);margin-top:12px;
+  padding-top:14px;border-top:1px solid var(--line);}
+.sc-list{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:9px;}
+.sc-list li{position:relative;padding-left:18px;font-size:13px;line-height:1.62;color:var(--ink2);}
+.sc-list li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--navy2);}
+.sc-list li.risk{color:var(--crimson);font-weight:500;border-left:2px solid var(--crimson);
+  padding:4px 0 4px 14px;margin-left:-2px;background:rgba(204,15,31,.05);}
+.sc-list li.risk::before{display:none;}
+
+/* ── ECONOMIST-STYLE ALLOCATION ── */
+.viz-cap{font-size:13px;font-weight:600;color:var(--ink);margin:30px 0 6px;}
+.viz-sub{font-size:11.5px;letter-spacing:.04em;color:var(--muted);margin-bottom:16px;}
+
+/* main stacked bar */
+.stackbar{display:flex;height:46px;overflow:hidden;border:1px solid var(--line);}
+.seg{display:flex;flex-direction:column;justify-content:center;padding:0 12px;color:#fff;overflow:hidden;}
+.seg .sn{font-size:12px;font-weight:600;line-height:1.15;white-space:nowrap;}
+.seg .sp{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;opacity:.85;font-variant-numeric:tabular-nums;}
+.seg.light{color:var(--navy);}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;}
+.lg{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted);}
+.lg i{width:11px;height:11px;display:inline-block;}
+
+/* % of total comparison bars (the Economist centerpiece) */
+.ebars{margin-top:34px;display:flex;flex-direction:column;gap:22px;}
+.ebar-block .ebar-cat{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.ebar{position:relative;height:30px;background:var(--track);}
+.ebar-fill{height:100%;background:var(--crimson);display:flex;align-items:center;padding-left:12px;}
+.ebar-fill .v{color:#fff;font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+.ebar-detail{font-size:11.5px;color:var(--muted);margin-top:6px;}
+
+/* ── EDITORIAL TABLE ── */
+.ft-table{width:100%;border-collapse:collapse;margin-top:38px;font-size:14px;}
+.ft-table thead th{
+  text-align:left;padding:0 14px 11px;font-size:10.5px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  border-bottom:2.5px solid var(--navy);border-top:none;
+}
+.ft-table tbody td{padding:16px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2);line-height:1.65;}
+.ft-table tbody tr:last-child td{border-bottom:2px solid var(--navy);}
+.ft-table .layer{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--navy);}
+.ft-table .layer .pct{display:block;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--crimson);margin-top:2px;}
+.ft-table .holds{font-weight:600;color:var(--navy);font-size:13.5px;}
+
+/* ── CLOSING CALLOUT ── */
+.closing{
+  margin-top:36px;padding:26px 30px;background:var(--paper-lt);
+  border-top:3px solid var(--navy);border-bottom:1px solid var(--line);
+  font-family:var(--serif);font-size:15.5px;line-height:1.85;color:var(--ink2);
+}
+.closing strong{color:var(--crimson);font-weight:700;}
+
+/* ── FOOTER ── */
+.ft-footer{
+  margin-top:8px;padding:30px 0 60px;border-top:1px solid var(--line);
+  font-size:11.5px;line-height:1.7;color:var(--muted);
+}
+.ft-footer strong{color:var(--navy);font-family:var(--serif);font-weight:700;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .ft-wrap{padding:0 22px;}
+  .meta-grid{grid-template-columns:1fr 1fr;}
+  .meta-item:nth-child(2){border-right:none;}
+  .pillars{grid-template-columns:1fr;}
+  .pillar{border-right:none;border-bottom:1px solid var(--line);padding:22px 0;}
+  .pillar:last-child{border-bottom:none;}
+  .stock-grid{grid-template-columns:1fr;}
+  .stockcard.span2{grid-column:span 1;}
+}
+@media(max-width:520px){
+  .meta-grid{grid-template-columns:1fr;}
+  .meta-item{border-right:none;border-bottom:1px solid var(--line);}
+  .meta-item:last-child{border-bottom:none;}
+  .seg .sp{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ TOP NAV ══ -->
+<div class="ft-topbar">
+  <div class="ft-wrap topbar-inner">
+    <a class="ft-brand" href="index.html">ROBO CAPITAL</a>
+    <nav class="ft-nav">
+      <a href="index.html">홈</a>
+      <a href="report1_집중투자전략.html">리포트 I</a>
+      <a href="report2_분산포트폴리오.html">리포트 II</a>
+      <a href="report3_슈퍼사이클.html">리포트 III</a>
+      <a class="on" href="report4_국부선점전략.html">리포트 IV</a>
+    </nav>
+  </div>
+</div>
+
+<div class="ft-wrap">
+
+  <!-- ══ MASTHEAD ══ -->
+  <header class="masthead">
+    <div class="mast-rule">
+      <span><span class="dot">●</span> ROBO CAPITAL INSTITUTIONAL RESEARCH</span>
+      <span>REPORT NO. IV — 2026</span>
+    </div>
+    <div class="kicker">Report IV · 대한민국 국부 선점 전략</div>
+    <h1 class="mast-h1">궁극의 바벨 포트폴리오</h1>
+    <p class="standfirst">국가대표 제조 자산과 미래 테크의 교차점</p>
+
+    <div class="meta-grid">
+      <div class="meta-item"><strong>작성일</strong><div class="mv">2026년 6월</div></div>
+      <div class="meta-item"><strong>전략 유형</strong><div class="mv">자산 바벨형 (Barbell)</div></div>
+      <div class="meta-item"><strong>분석 종목</strong><div class="mv">5개</div></div>
+      <div class="meta-item"><strong>핵심 테제</strong><div class="mv">현금흐름과 독점 테크의 결합</div></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 01 핵심 투자 테제 -->
+    <section class="sec">
+      <div class="sec-tab"></div>
+      <h2 class="sec-h">01 — 핵심 투자 테제</h2>
+
+      <div class="thesis">
+        <div class="thesis-ey">Investment Thesis</div>
+        <div class="thesis-title">가장 안전한 현금흐름으로 가장 파괴적인 미래를 산다</div>
+        <p>글로벌 금리 인하 사이클과 AI 인프라의 물리적 확장 국면이 교차하는 2026년 현재, 자산의 안정성과 폭발성을 동시에 확보하는 전략입니다. 대한민국 증시를 견인하는 압도적 기간산업 자산(레거시)을 핵심 축으로 삼는 동시에, 그들이 보유한 독점적 AI 하드웨어 밸류체인(원전·로봇 배터리·유리기판)의 개화에 베팅합니다.</p>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pico">🔋</div>
+          <h4>에너지 파운드리</h4>
+          <p>빅테크 데이터센터가 유발한 전력 쇼티지를 메울 유일한 대안인 원전 및 가스 발전의 실질 수혜</p>
+        </div>
+        <div class="pillar">
+          <div class="pico">🤖</div>
+          <h4>물리적 로보틱스</h4>
+          <p>단순 완성차·가전을 넘어 휴머노이드 상장 모멘텀과 고출력 로봇 배터리 시장의 독점적 선점</p>
+        </div>
+        <div class="pillar">
+          <div class="pico">🔮</div>
+          <h4>차세대 첨단 소재</h4>
+          <p>AI 칩 패키징의 게임 체인저가 될 유리기판과 2차전지 턴어라운드의 레버리지 확보</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 주도주 선점 -->
+    <section class="sec">
+      <div class="sec-tab"></div>
+      <h2 class="sec-h">02 — 주도주 선점 &amp; 핵심 현금흐름</h2>
+      <p class="sec-intro">현재 사이클에서 실적 모멘텀이 가장 강력하게 분출되며, AI 인프라·로보틱스 주도 성장 내러티브와 명확한 로봇 상장 타임라인을 앞세워 시장을 견인하는 포트폴리오의 뼈대 자산입니다.</p>
+
+      <div class="stock-grid">
+        <div class="stockcard">
+          <div class="sc-top">
+            <div><span class="sc-name">두산에너빌리티</span><span class="sc-code">034020 · KS</span></div>
+            <span class="sc-tag crimson">에너지 핵심</span>
+          </div>
+          <p class="sc-lead">미국 SMR 주기기 공급사 역할을 넘어, 빅테크의 AI 데이터센터 전력 수요 대응을 위한 대형 가스터빈 및 스팀터빈 수주가 폭증하는 인프라 랠리의 핵심 대장주.</p>
+          <ul class="sc-list">
+            <li>데이터센터발 발전 수주 본격화 — 수주잔고 역대급 24조 원 돌파</li>
+            <li>오클로 등 고변동성 미국 SMR 기업 대비 안전한 제조 파운드리 포지션</li>
+            <li class="risk">그룹사 특유의 지배구조 개편 이슈 및 재무 건전성 모니터링 지속 필요</li>
+          </ul>
+        </div>
+
+        <div class="stockcard">
+          <div class="sc-top">
+            <div><span class="sc-name">현대차</span><span class="sc-code">005380 · KS</span></div>
+            <span class="sc-tag crimson">로보틱스 주도주</span>
+          </div>
+          <p class="sc-lead">완성차 제조의 막대한 현금흐름을 기반으로 스마트 팩토리·휴머노이드 시장을 선도. 보스턴 다이나믹스 IPO 모멘텀이 선반영되며 로보틱스 성장주로의 강력한 멀티플 리레이팅이 진행 중인 핵심 주도주.</p>
+          <ul class="sc-list">
+            <li>보스턴 다이나믹스(휴머노이드) IPO 가시화로 하드웨어 멀티플 리레이팅 본격 진행</li>
+            <li>탄탄한 배당·현금창출력은 유지하되, 주가는 가치주가 아닌 로보틱스 성장주로 재평가되는 국면</li>
+            <li class="risk">2026년 상반기 급등에 따른 단기 과열 — 추격 매수보다 분할 접근으로 변동성 제어 필요</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 밸류 턴어라운드 & 첨단 소재 -->
+    <section class="sec">
+      <div class="sec-tab"></div>
+      <h2 class="sec-h">03 — 밸류 턴어라운드 &amp; 첨단 소재</h2>
+      <p class="sec-intro">강력한 밸류 턴어라운드 국면을 통과하며 주도주 랠리에 동참했거나, AI 하드웨어 시장에서 폭발적인 주가 탄력을 보여줄 수 있는 핵심 알파 카드입니다.</p>
+
+      <div class="stock-grid">
+        <div class="stockcard">
+          <div class="sc-top">
+            <div><span class="sc-name">삼성전자</span><span class="sc-code">005930 · KS</span></div>
+            <span class="sc-tag">AI 메모리 주도주</span>
+          </div>
+          <p class="sc-lead">D램, HBM, 고성능 SSD까지 토털 메모리 인프라를 독점하는 국가대표 자산. HBM·선단 공정 파운드리 공급 본격화로 무거운 턴어라운드를 달성하며, 2026년 상반기 주도주 랠리를 이끌고 역사적 고점 부근으로 레벨업한 핵심 성장주.</p>
+          <ul class="sc-list">
+            <li>HBM·선단 공정 파운드리 공급 본격화로 무거운 턴어라운드 달성, 주도주 랠리에 동참</li>
+            <li>반도체 전 영역 커버 및 자체 로봇 진출 가능성 등 사업 다각화로 성장 축 다변화</li>
+            <li class="risk">연말 추가 체질 개선과 선단 공정 파운드리 수율 안정화의 지속 확인 필요</li>
+          </ul>
+        </div>
+
+        <div class="stockcard">
+          <div class="sc-top">
+            <div><span class="sc-name">삼성SDI</span><span class="sc-code">006400 · KS</span></div>
+            <span class="sc-tag">로봇의 심장</span>
+          </div>
+          <p class="sc-lead">전기차 캐즘 우려 속에서도 AI 데이터센터용 초대형 ESS(백업 전력)와 로봇 전용 고출력 배터리로 돌파구를 마련 중. 5개 종목 중 상대적으로 단기 숨고르기·눌림목 구간에 진입해 분할 매수 매력도가 가장 높은 카드.</p>
+          <ul class="sc-list">
+            <li>로봇의 장시간 구동을 가능케 하는 고밀도/고출력 소형 배터리 공동 개발</li>
+            <li>빅테크 전력 차단 방지용 ESS 공급 계약 확대로 2차전지 업황 둔화 돌파</li>
+            <li class="risk">전기차 각형 배터리 수요 회복의 시차로 단기 숨고르기 구간 — 눌림목 분할 접근 유효</li>
+          </ul>
+        </div>
+
+        <div class="stockcard span2">
+          <div class="sc-top">
+            <div><span class="sc-name">SKC</span><span class="sc-code">011790 · KS</span></div>
+            <span class="sc-tag">하이 테크 알파</span>
+          </div>
+          <p class="sc-lead">자회사 앱솔릭스를 통한 AI 첨단 패키징 게임 체인저 '유리기판'의 선두 주자. 다만 화학·동박 등 본업의 적자 고리를 끊기 위한 고강도 구조조정(다운사이징) 리스크와 재무 펀더멘탈 회복 모멘텀을 동시에 감내해야 하는 레버리지 자산.</p>
+          <ul class="sc-list">
+            <li>글로벌 빅테크향 유리기판 퀄 테스트 완료 및 본격 양산 모멘텀 보유</li>
+            <li>화학·동박 본업의 고강도 구조조정(다운사이징)으로 적자 고리 차단 시 재무 펀더멘탈 반등 기대</li>
+            <li class="risk">본업 적자 및 유리기판 매출 전환까지의 리드타임 — 높은 주가 변동성 감내 필요</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 포트폴리오 비중 배분안 -->
+    <section class="sec">
+      <div class="sec-tab"></div>
+      <h2 class="sec-h">04 — 포트폴리오 비중 배분안</h2>
+
+      <!-- 종목별 스택 바 -->
+      <div class="viz-cap">종목별 비중 배분</div>
+      <div class="viz-sub">총 포트폴리오 100% 기준 · % of total</div>
+      <div class="stackbar">
+        <div class="seg" style="width:25%;background:#cc0f1f"><span class="sn">두산에너빌</span><span class="sp">25%</span></div>
+        <div class="seg" style="width:20%;background:#11243f"><span class="sn">현대차</span><span class="sp">20%</span></div>
+        <div class="seg" style="width:20%;background:#2f5d86"><span class="sn">삼성전자</span><span class="sp">20%</span></div>
+        <div class="seg" style="width:20%;background:#7d94a8"><span class="sn">SKC</span><span class="sp">20%</span></div>
+        <div class="seg light" style="width:15%;background:#c2ccd4"><span class="sn">삼성SDI</span><span class="sp">15%</span></div>
+      </div>
+      <div class="legend">
+        <span class="lg"><i style="background:#cc0f1f"></i>두산에너빌리티 25%</span>
+        <span class="lg"><i style="background:#11243f"></i>현대차 20%</span>
+        <span class="lg"><i style="background:#2f5d86"></i>삼성전자 20%</span>
+        <span class="lg"><i style="background:#7d94a8"></i>SKC 20%</span>
+        <span class="lg"><i style="background:#c2ccd4"></i>삼성SDI 15%</span>
+      </div>
+
+      <!-- 전략 레이어별 비중 (Economist % bars) -->
+      <div class="viz-cap" style="margin-top:42px">전략 레이어별 배분</div>
+      <div class="viz-sub">총자산 대비 % · 사이클 배치 논리</div>
+      <div class="ebars">
+        <div class="ebar-block">
+          <div class="ebar-cat">주도주 선점</div>
+          <div class="ebar"><div class="ebar-fill" style="width:45%"><span class="v">45%</span></div></div>
+          <div class="ebar-detail">두산에너빌리티 25% · 현대차 20%</div>
+        </div>
+        <div class="ebar-block">
+          <div class="ebar-cat">밸류 턴어라운드 및 인프라</div>
+          <div class="ebar"><div class="ebar-fill" style="width:35%"><span class="v">35%</span></div></div>
+          <div class="ebar-detail">삼성전자 20% · 삼성SDI 15%</div>
+        </div>
+        <div class="ebar-block">
+          <div class="ebar-cat">성장주 레버리지</div>
+          <div class="ebar"><div class="ebar-fill" style="width:20%"><span class="v">20%</span></div></div>
+          <div class="ebar-detail">SKC 20%</div>
+        </div>
+      </div>
+
+      <!-- 배분 상세 테이블 -->
+      <table class="ft-table">
+        <thead>
+          <tr>
+            <th style="width:24%">전략 레이어</th>
+            <th style="width:32%">해당 종목 (비중)</th>
+            <th style="width:44%">사이클 배치 논리</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="layer">주도주 선점<span class="pct">45%</span></td>
+            <td class="holds">두산에너빌리티 (25%)<br>현대차 (20%)</td>
+            <td>전력 쇼티지 흐름의 직접적 실적 수혜와 보스턴 다이나믹스 상장이라는 명확한 로봇 모멘텀 선점. 포트폴리오의 단단한 중심축.</td>
+          </tr>
+          <tr>
+            <td class="layer">밸류 턴어라운드 및 인프라<span class="pct">35%</span></td>
+            <td class="holds">삼성전자 (20%)<br>삼성SDI (15%)</td>
+            <td>삼성전자는 HBM·파운드리 턴어라운드를 달성하며 주도주로 레벨업, 삼성SDI는 상대적 눌림목 구간. 과열된 삼전은 추격을 절제하고 SDI 조정 시 분할 매수로 평단가를 제어.</td>
+          </tr>
+          <tr>
+            <td class="layer">성장주 레버리지<span class="pct">20%</span></td>
+            <td class="holds">SKC (20%)</td>
+            <td>유리기판이라는 AI 최고 하이테크 내러티브의 현실화 구간. 시장 심리 개선 시 가장 가볍고 파괴적인 알파 수익률 견인.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="closing">
+        <strong>전략의 핵심 운용 논리:</strong> 5개 종목 모두 일류 기업이지만 2026년 상반기를 거치며 시장이 가치를 반영한 시간표는 제각각입니다. 이미 주도주 랠리를 펼쳐 역사적 고점 부근에 다다른 종목(삼전·현대)은 단기 과열을 경계해 추격 매수를 절제하고, 상대적으로 밸류에이션 숨고르기 중인 종목(삼성SDI·두산에너빌)의 눌림목을 활용해 평단가를 제어하는 '보수적 타임라인의 바벨 매수'가 이 전략의 핵심입니다.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="ft-footer">
+    <strong>ROBO CAPITAL</strong> · 본 리포트는 투자자의 아이디어를 바탕으로 자산 배분 관점에서 작성된 교육 및 정보 제공 목적의 자료입니다. 실제 투자 결정은 본인의 판단과 책임 하에 이루어져야 하며, 모든 주식 투자에는 원금 손실의 위험이 따릅니다.
+  </footer>
+
+</div>
+
+</body>
+</html>
